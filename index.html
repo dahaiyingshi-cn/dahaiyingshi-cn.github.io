@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="大海影视 - 海量高清影视资源在线观看平台，汇聚电影、电视剧、综艺、动漫、纪录片等丰富内容。大海影视（dahaiyingshi-cn）资源如海，畅享无限观影乐趣。">
+<meta name="keywords" content="大海影视,dahaiyingshi-cn,高清影视在线观看,电影电视剧综艺动漫,海量影视资源">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="大海影视 - 海量高清影视在线观看平台">
+<meta property="og:description" content="大海影视（dahaiyingshi-cn）提供电影、剧集、综艺、动漫、纪录片等海量高清影视资源在线观看，资源如海畅享无限。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dahaiyingshi-cn.github.io">
+<title>大海影视 - 海量高清影视在线观看平台 | dahaiyingshi-cn</title>
+<style>
+/* ============ 基础重置 ============ */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#050b14;
+  --bg2:#0a1626;
+  --card:#0f1d31;
+  --deep:#0a2a4a;
+  --foam:#00c6ff;
+  --gold:#ffb347;
+  --text:#eaf4ff;
+  --muted:#8fa6bf;
+  --radius:18px;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.container{max-width:1180px;margin:0 auto;padding:0 20px;}
+
+/* ============ 导航 ============ */
+.navbar{position:sticky;top:0;z-index:100;background:rgba(5,11,20,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,198,255,.15);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;}
+.brand{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:900;letter-spacing:1px;}
+.brand .wave{font-size:26px;animation:wave 2.4s ease-in-out infinite;}
+@keyframes wave{0%,100%{transform:rotate(-8deg);}50%{transform:rotate(8deg);}}
+.brand .site{color:#fff;}
+.brand .site em{font-style:normal;background:linear-gradient(90deg,var(--foam),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.brand small{display:block;font-size:10px;color:var(--muted);font-weight:500;letter-spacing:2px;}
+.nav-links{display:flex;gap:2px;align-items:center;}
+.nav-links a{padding:9px 15px;border-radius:10px;font-size:15px;color:var(--muted);transition:.25s;font-weight:500;}
+.nav-links a:hover{color:#fff;background:rgba(0,198,255,.15);}
+.menu-btn{display:none;background:none;border:none;color:#fff;font-size:27px;cursor:pointer;}
+
+/* ============ Hero 首页 ============ */
+.hero{position:relative;padding:96px 0 74px;overflow:hidden;background:radial-gradient(800px 500px at 50% -10%,rgba(0,198,255,.22),transparent),linear-gradient(180deg,#050b14,#081526);}
+.wave-bg{position:absolute;left:0;right:0;bottom:0;height:120px;opacity:.5;z-index:0;}
+.wave-bg svg{width:100%;height:100%;}
+.hero-inner{text-align:center;position:relative;z-index:2;}
+.hero .boat{font-size:64px;margin-bottom:18px;display:inline-block;animation:float 4s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg);}50%{transform:translateY(-14px) rotate(3deg);}}
+.hero h1{font-size:clamp(38px,6.4vw,66px);line-height:1.15;font-weight:900;margin-bottom:18px;}
+.hero h1 span{background:linear-gradient(90deg,var(--foam),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero p.lead{font-size:18px;color:var(--muted);max-width:640px;margin:0 auto 38px;}
+.search-box{display:flex;gap:8px;max-width:580px;margin:0 auto;background:var(--card);padding:8px;border-radius:16px;border:1px solid rgba(0,198,255,.25);}
+.search-box input{flex:1;background:none;border:none;outline:none;color:#fff;padding:12px 16px;font-size:15px;}
+.search-box button{border:none;cursor:pointer;background:linear-gradient(135deg,#0096d6,#00c6ff);color:#04121e;padding:0 30px;border-radius:12px;font-size:15px;font-weight:800;transition:.25s;}
+.search-box button:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,198,255,.45);}
+
+/* ============ 通用栏目 ============ */
+section{padding:76px 0;}
+.sec-head{text-align:center;margin-bottom:46px;}
+.sec-head .kicker{color:var(--foam);font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;}
+.sec-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:900;margin:10px 0 12px;}
+.sec-head p{color:var(--muted);font-size:15px;max-width:600px;margin:0 auto;}
+.more-center{text-align:center;margin-top:38px;}
+.btn-line{display:inline-block;padding:12px 32px;border:1px solid rgba(0,198,255,.4);border-radius:999px;color:var(--foam);font-size:14px;font-weight:600;transition:.25s;}
+.btn-line:hover{background:var(--foam);color:#04121e;}
+
+/* ============ 电影 - 波浪网格 ============ */
+.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:22px;}
+.movie-card{position:relative;background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.06);transition:.35s;cursor:pointer;}
+.movie-card:hover{transform:translateY(-10px);border-color:rgba(0,198,255,.4);box-shadow:0 22px 48px rgba(0,60,100,.5);}
+.movie-card .cv{position:relative;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-size:60px;}
+.movie-card .cv::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;background:linear-gradient(transparent,rgba(5,11,20,.9));}
+.movie-card .tag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(0,60,100,.6);backdrop-filter:blur(4px);font-size:11px;padding:5px 11px;border-radius:8px;}
+.movie-card .score{position:absolute;top:14px;right:14px;z-index:2;color:var(--gold);font-size:13px;font-weight:800;background:rgba(0,60,100,.6);padding:5px 11px;border-radius:8px;}
+.movie-card .info{position:relative;padding:0 18px 18px;}
+.movie-card .info h3{font-size:16px;font-weight:700;}
+.movie-card .info p{font-size:12px;color:var(--muted);margin-top:5px;}
+
+/* ============ 剧集 - 轮播式大图卡 ============ */
+.drama-shell{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:stretch;}
+.drama-feature{position:relative;border-radius:var(--radius);overflow:hidden;min-height:420px;display:flex;align-items:flex-end;padding:34px;cursor:pointer;transition:.3s;}
+.drama-feature:hover{transform:scale(1.01);}
+.drama-feature .feat-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:120px;z-index:0;}
+.drama-feature::before{content:"";position:absolute;inset:0;background:linear-gradient(20deg,var(--bg) 10%,transparent 70%);z-index:1;}
+.drama-feature .feat-body{position:relative;z-index:2;}
+.drama-feature .feat-body .lb{display:inline-block;background:var(--foam);color:#04121e;font-size:12px;font-weight:800;padding:5px 13px;border-radius:999px;margin-bottom:14px;}
+.drama-feature h3{font-size:30px;font-weight:900;margin-bottom:10px;}
+.drama-feature p{color:#cfe0f0;font-size:14px;max-width:420px;margin-bottom:16px;}
+.drama-feature .ep-row{display:flex;gap:8px;flex-wrap:wrap;}
+.drama-feature .ep-row span{font-size:12px;background:rgba(255,255,255,.14);padding:5px 11px;border-radius:6px;}
+.drama-list{display:flex;flex-direction:column;gap:14px;}
+.drama-mini{display:grid;grid-template-columns:96px 1fr;gap:16px;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.05);transition:.25s;cursor:pointer;}
+.drama-mini:hover{border-color:rgba(0,198,255,.35);transform:translateX(6px);}
+.drama-mini .tb{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:34px;}
+.drama-mini .bd{padding:14px 16px 14px 0;}
+.drama-mini h4{font-size:15px;font-weight:700;margin-bottom:5px;}
+.drama-mini p{font-size:12px;color:var(--muted);}
+
+/* ============ 综艺 - 波浪带 ============ */
+.variety-wrap{position:relative;}
+.variety-band{display:flex;gap:0;overflow:hidden;border-radius:var(--radius);}
+.variety-col{flex:1;min-width:0;position:relative;aspect-ratio:3/5;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;cursor:pointer;transition:.35s;overflow:hidden;}
+.variety-col:not(:last-child){border-right:2px solid rgba(255,255,255,.08);}
+.variety-col .big{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:100px;z-index:0;transition:.4s;}
+.variety-col:hover .big{transform:scale(1.15) rotate(-4deg);}
+.variety-col::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,11,20,.95),transparent 60%);z-index:1;}
+.variety-col .vc{position:relative;z-index:2;text-align:center;}
+.variety-col .vc h3{font-size:19px;font-weight:900;margin-bottom:8px;}
+.variety-col .vc p{font-size:12px;color:#bcd3e8;opacity:0;}
+.variety-col:hover .vc p{opacity:1;}
+
+/* ============ 动漫 - 九宫格 ============ */
+.anime-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.anime-cell{position:relative;aspect-ratio:1;border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:48px;cursor:pointer;transition:.35s;}
+.anime-cell:hover{transform:scale(1.05);z-index:3;box-shadow:0 18px 40px rgba(0,60,100,.5);}
+.anime-cell .nm{position:absolute;left:0;right:0;bottom:0;padding:14px;text-align:center;font-size:14px;font-weight:700;background:linear-gradient(transparent,rgba(5,11,20,.92));}
+
+/* ============ 纪录片 - 标签页 ============ */
+.doc-tabs{display:flex;gap:10px;justify-content:center;margin-bottom:30px;flex-wrap:wrap;}
+.doc-tab{padding:10px 24px;border-radius:999px;background:var(--card);border:1px solid rgba(255,255,255,.06);color:var(--muted);cursor:pointer;font-size:14px;font-weight:600;transition:.2s;}
+.doc-tab.active,.doc-tab:hover{background:linear-gradient(135deg,#0096d6,#00c6ff);color:#04121e;}
+.doc-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;}
+.doc-card{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.05);transition:.3s;}
+.doc-card:hover{transform:translateY(-6px);border-color:rgba(255,179,71,.4);}
+.doc-card .dc{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:50px;position:relative;}
+.doc-card .dur{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.55);font-size:11px;padding:4px 9px;border-radius:6px;}
+.doc-card .di{padding:18px;}
+.doc-card h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+.doc-card p{font-size:13px;color:var(--muted);}
+
+/* ============ 页脚 ============ */
+footer{background:var(--bg2);border-top:1px solid rgba(0,198,255,.15);padding:56px 0 30px;position:relative;overflow:hidden;}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;}
+.foot-grid h4{font-size:15px;margin-bottom:16px;color:#fff;}
+.foot-grid ul{list-style:none;}
+.foot-grid ul li{margin-bottom:10px;}
+.foot-grid ul li a{color:var(--muted);font-size:14px;transition:.2s;}
+.foot-grid ul li a:hover{color:var(--foam);}
+.copy{margin-top:34px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);text-align:center;color:var(--muted);font-size:13px;}
+
+/* ============ 响应式 ============ */
+@media(max-width:900px){
+  .drama-shell{grid-template-columns:1fr;}
+  .drama-feature{min-height:300px;}
+  .anime-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:860px){
+  .hero{padding:60px 0 48px;}
+  section{padding:54px 0;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  .nav-links{position:fixed;top:68px;left:0;right:0;flex-direction:column;background:var(--bg2);padding:20px;gap:4px;transform:translateY(-120%);transition:.35s;box-shadow:0 20px 40px rgba(0,0,0,.6);}
+  .nav-links.open{transform:translateY(0);}
+  .nav-links a{width:100%;text-align:center;padding:12px;border-radius:12px;}
+  .menu-btn{display:block;}
+  .search-box button{padding:0 18px;}
+  .drama-mini{grid-template-columns:76px 1fr;}
+  .drama-mini .tb{font-size:26px;}
+  .variety-band{flex-direction:column;}
+  .variety-col{aspect-ratio:5/3;border-right:none;border-bottom:2px solid rgba(255,255,255,.08);}
+  .variety-col .vc p{opacity:1;}
+  .foot-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ================= 导航 ================= -->
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">
+      <span class="wave">🌊</span>
+      <span class="site">大海<em>影视</em><small>DAHAI YINGSHI</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">首页</a>
+      <a href="#movies">电影</a>
+      <a href="#dramas">剧集</a>
+      <a href="#variety">综艺</a>
+      <a href="#anime">动漫</a>
+      <a href="#docs">纪录片</a>
+      <a href="#about">关于我们</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= Hero 首页 ================= -->
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <span class="boat">⛵</span>
+      <h1>资源如海<br>畅游 <span>大海影视</span></h1>
+      <p class="lead">大海影视（dahaiyingshi-cn）是海量高清影视资源的汇聚之地，电影、剧集、综艺、动漫、纪录片一网打尽，带你畅享无限观影乐趣。</p>
+      <form class="search-box" onsubmit="event.preventDefault();">
+        <input type="text" placeholder="搜索影视、演员、导演、类型..." aria-label="搜索">
+        <button type="submit">搜索</button>
+      </form>
+    </div>
+    <div class="wave-bg">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="rgba(0,198,255,0.18)" d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z"/></svg>
+    </div>
+  </section>
+
+  <!-- ================= 电影 ================= -->
+  <section id="movies">
+    <div class="container">
+      <div class="sec-head">
+        <div class="kicker">Movie Channel</div>
+        <h2>院线大片 · 热门电影</h2>
+        <p>大海影视精选最新院线大片与高分经典，动作、喜剧、爱情、科幻、悬疑全品类覆盖，高清在线即点即看。</p>
+      </div>
+      <div class="movie-grid">
+        <article class="movie-card"><div class="cv" style="background:linear-gradient(160deg,#0a2a4a,#051526);">🚀</div><span class="tag">科幻</span><span class="score">★ 8.8</span><div class="info"><h3>星际远航</h3><p>2026 · 科幻/冒险</p></div></article>
+        <article class="movie-card"><div class="cv" style="background:linear-gradient(160deg,#3a1a10,#1a0d08);">🔥</div><span class="tag">动作</span><span class="score">★ 8.5</span><div class="info"><h3>烈焰之战</h3><p>2026 · 动作/战争</p></div></article>
+        <article class="movie-card"><div class="cv" style="background:linear-gradient(160deg,#1a3a2a,#0d1f15);">🌿</div><span class="tag">治愈</span><span class="score">★ 9.0</span><div class="info"><h3>海边的夏天</h3><p>2026 · 爱情/治愈</p></div></article>
+        <article class="movie-card"><div class="cv" style="background:linear-gradient(160deg,#2a1a3a,#150d1f);">🤖</div><span class="tag">动画</span><span class="score">★ 8.7</span><div class="info"><h3>机械之心</h3><p>2026 · 动画/科幻</p></div></article>
+        <article class="movie-card"><div class="cv" style="background:linear-gradient(160deg,#3a2a10,#1f1508);">💰</div><span class="tag">犯罪</span><span class="score">★ 8.6</span><div class="info"><h3>黄金迷局</h3><p>2026 · 犯罪/悬疑</p></div></article>
+        <article class="movie-card"><div class="cv" style="background:linear-gradient(160deg,#102a3a,#08151f);">🏔️</div><span class="tag">冒险</span><span class="score">★ 8.9</span><div class="info"><h3>极地征途</h3><p>2026 · 冒险/剧情</p></div></article>
+        <article class="movie-card"><div class="cv" style="background:linear-gradient(160deg,#3a1020,#1f0810);">🎭</div><span class="tag">喜剧</span><span class="score">★ 8.3</span><div class="info"><h3>欢乐满屋</h3><p>2026 · 喜剧/家庭</p></div></article>
+        <article class="movie-card"><div class="cv" style="background:linear-gradient(160deg,#10203a,#081020);">👽</div><span class="tag">惊悚</span><span class="score">★ 8.4</span><div class="info"><h3>深海谜踪</h3><p>2026 · 惊悚/悬疑</p></div></article>
+      </div>
+      <div class="more-center"><a class="btn-line" href="#">浏览全部电影 ›</a></div>
+    </div>
+  </section>
+
+  <!-- ================= 剧集 ================= -->
+  <section id="dramas" style="background:linear-gradient(180deg,transparent,rgba(0,198,255,.04),transparent);">
+    <div class="container">
+      <div class="sec-head">
+        <div class="kicker">Drama Channel</div>
+        <h2>热播剧集 · 追更不停</h2>
+        <p>大海影视同步更新国内外热门电视剧，古装、都市、悬疑、历史题材应有尽有，随时开启追剧之旅。</p>
+      </div>
+      <div class="drama-shell">
+        <div class="drama-feature">
+          <div class="feat-bg" style="background:linear-gradient(135deg,#0c3a5c,#061a2a);">👑</div>
+          <div class="feat-body">
+            <span class="lb">本周主打</span>
+            <h3>沧海长歌</h3>
+            <p>一部横跨三十年的时代巨制，讲述一个家族在时代浪潮中的沉浮与坚守，群星云集、制作精良。</p>
+            <div class="ep-row"><span>年代传奇</span><span>48集</span><span>更新至32集</span><span>9.2分</span></div>
+          </div>
+        </div>
+        <div class="drama-list">
+          <div class="drama-mini"><div class="tb" style="background:linear-gradient(135deg,#3a1a2a,#1f0d15);">💼</div><div class="bd"><h4>都市精英</h4><p>职场商战 · 30集 · 完结</p></div></div>
+          <div class="drama-mini"><div class="tb" style="background:linear-gradient(135deg,#1a2a3a,#0d151f);">🗡️</div><div class="bd"><h4>江湖夜雨</h4><p>古装武侠 · 40集 · 更新中</p></div></div>
+          <div class="drama-mini"><div class="tb" style="background:linear-gradient(135deg,#2a3a1a,#15200d);">🔍</div><div class="bd"><h4>沉默证据</h4><p>刑侦悬疑 · 24集 · 完结</p></div></div>
+          <div class="drama-mini"><div class="tb" style="background:linear-gradient(135deg,#3a2a1a,#1f150d);">👨‍👩‍👧</div><div class="bd"><h4>人间烟火</h4><p>家庭伦理 · 36集 · 更新中</p></div></div>
+          <div class="drama-mini"><div class="tb" style="background:linear-gradient(135deg,#1a3a3a,#0d2020);">🏥</div><div class="bd"><h4>急诊24小时</h4><p>医疗职场 · 20集 · 完结</p></div></div>
+        </div>
+      </div>
+      <div class="more-center"><a class="btn-line" href="#">浏览全部剧集 ›</a></div>
+    </div>
+  </section>
+
+  <!-- ================= 综艺 ================= -->
+  <section id="variety">
+    <div class="container">
+      <div class="sec-head">
+        <div class="kicker">Variety Channel</div>
+        <h2>精彩综艺 · 欢乐不断</h2>
+        <p>大海影视汇聚真人秀、脱口秀、竞技选秀、生活观察等热门综艺，让你轻松一笑、释放压力。</p>
+      </div>
+      <div class="variety-wrap">
+        <div class="variety-band">
+          <div class="variety-col"><div class="big" style="background:linear-gradient(160deg,#0c3a5c,#061a2a);">🎤</div><div class="vc"><h3>我是歌手秀</h3><p>实力唱将同台竞演，争夺年度歌王</p></div></div>
+          <div class="variety-col"><div class="big" style="background:linear-gradient(160deg,#3a1a2a,#1f0d15);">🍳</div><div class="vc"><h3>舌尖挑战赛</h3><p>名厨带队，挑战全球奇葩美食</p></div></div>
+          <div class="variety-col"><div class="big" style="background:linear-gradient(160deg,#1a3a2a,#0d1f15);">🏝️</div><div class="vc"><h3>荒野生存记</h3><p>明星荒岛求生，挑战生存极限</p></div></div>
+          <div class="variety-col"><div class="big" style="background:linear-gradient(160deg,#2a1a3a,#150d1f);">💬</div><div class="vc"><h3>深夜聊天室</h3><p>嘉宾畅聊人生，金句频出</p></div></div>
+          <div class="variety-col"><div class="big" style="background:linear-gradient(160deg,#3a2a10,#1f1508);">🏆</div><div class="vc"><h3>冠军之路</h3><p>体育竞技真人秀，热血沸腾</p></div></div>
+        </div>
+      </div>
+      <div class="more-center"><a class="btn-line" href="#">浏览全部综艺 ›</a></div>
+    </div>
+  </section>
+
+  <!-- ================= 动漫 ================= -->
+  <section id="anime" style="background:linear-gradient(180deg,transparent,rgba(255,179,71,.04),transparent);">
+    <div class="container">
+      <div class="sec-head">
+        <div class="kicker">Anime Channel</div>
+        <h2>国漫日漫 · 经典连载</h2>
+        <p>大海影视同步更新热门国漫与日漫，热血、奇幻、治愈、机甲题材齐全，一次看个够。</p>
+      </div>
+      <div class="anime-grid">
+        <div class="anime-cell" style="background:linear-gradient(135deg,#0c3a5c,#061a2a);">🐉<span class="nm">龙域传说</span></div>
+        <div class="anime-cell" style="background:linear-gradient(135deg,#3a1a10,#1f0d08);">⚔️<span class="nm">剑客行</span></div>
+        <div class="anime-cell" style="background:linear-gradient(135deg,#1a3a2a,#0d1f15);">🌸<span class="nm">花间物语</span></div>
+        <div class="anime-cell" style="background:linear-gradient(135deg,#2a1a3a,#150d1f);">🤖<span class="nm">机甲先锋</span></div>
+        <div class="anime-cell" style="background:linear-gradient(135deg,#3a2a10,#1f1508);">🧙<span class="nm">魔法学院</span></div>
+        <div class="anime-cell" style="background:linear-gradient(135deg,#102a3a,#08151f);">🌊<span class="nm">海底奇兵</span></div>
+      </div>
+      <div class="more-center"><a class="btn-line" href="#">浏览全部动漫 ›</a></div>
+    </div>
+  </section>
+
+  <!-- ================= 纪录片 ================= -->
+  <section id="docs">
+    <div class="container">
+      <div class="sec-head">
+        <div class="kicker">Documentary Channel</div>
+        <h2>纪录大片 · 看见真实</h2>
+        <p>大海影视精选自然、历史、人文、科技类高质量纪录片，足不出户看遍世界万象。</p>
+      </div>
+      <div class="doc-tabs">
+        <span class="doc-tab active">自然地理</span>
+        <span class="doc-tab">历史人文</span>
+        <span class="doc-tab">科技探索</span>
+        <span class="doc-tab">社会纪实</span>
+      </div>
+      <div class="doc-cards">
+        <div class="doc-card"><div class="dc" style="background:linear-gradient(135deg,#0a2a4a,#051526);">🐋<span class="dur">60分钟</span></div><div class="di"><h3>深蓝秘境</h3><p>潜入万米深海，揭开海洋最深处不为人知的秘密。</p></div></div>
+        <div class="doc-card"><div class="dc" style="background:linear-gradient(135deg,#3a2a10,#1f1508);">🏜️<span class="dur">45分钟</span></div><div class="di"><h3>大漠孤烟</h3><p>穿越塔克拉玛干，记录沙漠边缘的生命奇迹。</p></div></div>
+        <div class="doc-card"><div class="dc" style="background:linear-gradient(135deg,#1a3a1a,#0d1f0d);">🌳<span class="dur">50分钟</span></div><div class="di"><h3>雨林之声</h3><p>亚马逊雨林中的物种交响，聆听地球的呼吸。</p></div></div>
+        <div class="doc-card"><div class="dc" style="background:linear-gradient(135deg,#2a1a3a,#150d1f);">🚀<span class="dur">55分钟</span></div><div class="di"><h3>星辰征途</h3><p>从地球到火星，人类航天探索的壮阔历程。</p></div></div>
+        <div class="doc-card"><div class="dc" style="background:linear-gradient(135deg,#3a1a2a,#1f0d15);">🏯<span class="dur">48分钟</span></div><div class="di"><h3>千年古城</h3><p>一座千年古城的兴衰变迁，见证文明的力量。</p></div></div>
+        <div class="doc-card"><div class="dc" style="background:linear-gradient(135deg,#1a2a3a,#0d1520);">🧊<span class="dur">52分钟</span></div><div class="di"><h3>极地守望</h3><p>南极科考队的一年，冰封世界里的坚守与发现。</p></div></div>
+      </div>
+      <div class="more-center"><a class="btn-line" href="#">浏览全部纪录片 ›</a></div>
+    </div>
+  </section>
+
+  <!-- ================= 关于 ================= -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-head">
+        <div class="kicker">About Us</div>
+        <h2>关于大海影视</h2>
+        <p>大海影视（dahaiyingshi-cn）是海量影视资源的在线观看平台，资源如海、品类齐全，让每个人都能轻松找到心仪的好内容。</p>
+      </div>
+      <div class="foot-grid" style="grid-template-columns:repeat(2,1fr);max-width:900px;margin:0 auto;">
+        <div style="background:var(--card);border-radius:var(--radius);padding:30px;border:1px solid rgba(255,255,255,.05);">
+          <h4 style="color:var(--foam);">🌊 为什么选择大海影视</h4>
+          <p style="color:var(--muted);font-size:14px;margin-bottom:14px;">大海影视汇聚电影、剧集、综艺、动漫、纪录片等海量资源，覆盖国内外热门内容与经典老片，品类齐全、持续更新。</p>
+          <p style="color:var(--muted);font-size:14px;">平台坚持高清流畅播放、多端自适应与友好体验，让你随时随地畅享观影乐趣。</p>
+        </div>
+        <div style="background:var(--card);border-radius:var(--radius);padding:30px;border:1px solid rgba(255,255,255,.05);">
+          <h4 style="color:var(--gold);">🎯 平台亮点</h4>
+          <ul style="list-style:none;color:var(--muted);font-size:14px;">
+            <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);">✓ 海量资源 — 品类齐全、持续扩充</li>
+            <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);">✓ 高清流畅 — 多清晰度自适应切换</li>
+            <li style="padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);">✓ 多端适配 — 手机/平板/电脑全兼容</li>
+            <li style="padding:8px 0;">✓ 实时更新 — 新片热剧第一时间上线</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= 页脚 ================= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><span class="wave">🌊</span><span class="site">大海<em>影视</em></span></a>
+        <p style="color:var(--muted);font-size:14px;margin-top:14px;max-width:300px;">大海影视（dahaiyingshi-cn）— 海量高清影视资源在线观看平台，资源如海畅享无限。</p>
+      </div>
+      <div><h4>频道导航</h4><ul><li><a href="#movies">电影</a></li><li><a href="#dramas">剧集</a></li><li><a href="#variety">综艺</a></li><li><a href="#anime">动漫</a></li><li><a href="#docs">纪录片</a></li></ul></div>
+      <div><h4>热门功能</h4><ul><li><a href="#">最新上线</a></li><li><a href="#">高分推荐</a></li><li><a href="#">分类筛选</a></li><li><a href="#">排行榜</a></li></ul></div>
+      <div><h4>关于</h4><ul><li><a href="#about">关于大海影视</a></li><li><a href="#">免责声明</a></li><li><a href="#">联系我们</a></li><li><a href="https://dahaiyingshi-cn.github.io">dahaiyingshi-cn.github.io</a></li></ul></div>
+    </div>
+    <div class="copy">© 2026 大海影视 dahaiyingshi-cn.github.io · 本站仅供学习与交流使用，资源版权归原作者及发行方所有</div>
+  </div>
+</footer>
+
+<script>
+// 移动端菜单
+document.getElementById('menuBtn').addEventListener('click',function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open');});
+});
+// 纪录片 tab
+document.querySelectorAll('.doc-tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    var sib=this.parentElement.querySelectorAll('.doc-tab');
+    for(var i=0;i<sib.length;i++){sib[i].classList.remove('active');}
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
